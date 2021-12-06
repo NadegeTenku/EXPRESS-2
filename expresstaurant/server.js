@@ -1,6 +1,8 @@
 const express = require('express')
 const path = require('path') //node native module
 const { Restaurant } = require('./models/Restaurant')
+const { Menu } = require('./models/Menu')
+const { Item } = require('./models/Item')
 
 const app = express()
 const port = 3000
@@ -25,6 +27,22 @@ app.get('/restaurants', async (req,res) => {
     const allRestaurants = await Restaurant.findAll()
     //respond with allRestaurants as a json objeect
     res.json(allRestaurants)
+})
+
+//GET method on /menus route returns all menus
+app.get('/menus', async (req,res) => {
+    //find all instances of the Model Menu
+    const allMenus = await Menu.findAll()
+    //respond with allMenus as a json objeect
+    res.json(allMenus)
+})
+
+//GET method on /items route returns all items
+app.get('/items', async (req,res) => {
+    //find all instances of the Model Item
+    const allItems = await Item.findAll()
+    //respond with allItems as a json objeect
+    res.json(allItems)
 })
 
 app.listen(port, () => {
