@@ -1,6 +1,6 @@
 const express = require('express')
 const path = require('path') //node native module
-const { Restaurant } = require('./Restaurant')
+const { Restaurant } = require('./models/Restaurant')
 
 const app = express()
 const port = 3000
