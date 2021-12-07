@@ -1,0 +1,84 @@
+//restaurant.js
+const {sequelize, DataTypes, Model} = require('./db')
+
+class Restaurant extends Model {}
+
+Restaurant.init({
+    restaurantName: DataTypes.STRING, //attributes / property of the restaurant
+    location: DataTypes.STRING,
+    capacity: DataTypes.INTEGER
+
+  
+}, {
+    sequelize,
+    timestamps: false
+})
+
+module.exports = {Restaurant}
+
+
+//Menu.js
+const {sequelize, DataTypes, Model} = require('./db')
+
+class Menu extends Model {}
+
+Menu.init({
+    category: DataTypes.STRING,
+    menuType: DataTypes.STRING
+}, {
+    sequelize,
+    timestamps: false
+})
+
+module.exports = {Menu}
+
+
+//item.js
+const {sequelize, DataTypes, Model} = require('./db')
+
+class MenuItems extends Model {}
+
+MenuItems.init({
+    mealName: DataTypes.STRING,
+    quantity: DataTypes.INTEGER,
+    orderDate: DataTypes.DATE
+}, {
+    sequelize,
+    timestamps: false
+})
+
+module.exports = {MenuItems}
+
+
+//orders.js
+const {sequelize, DataTypes, Model} = require('./db')
+
+class Orders extends Model {}
+
+Orders.init({
+    customerID: DataTypes.INTEGER,
+    ordersDate: DataTypes.DATE,
+    price: DataTypes.FLOAT
+}, {
+    sequelize,
+    timestamps: false
+})
+
+module.exports = {Orders}
+
+
+//customer.js
+const {sequelize, DataTypes, Model} = require('./db')
+
+class Customer extends Model {}
+
+Customer.init({
+    orderID: DataTypes.INTEGER,
+    customerName: DataTypes.STRING,
+    paymentType: DataTypes.BOOLEAN
+}, {
+    sequelize,
+    timestamps: false
+})
+
+module.exports = {Customer}

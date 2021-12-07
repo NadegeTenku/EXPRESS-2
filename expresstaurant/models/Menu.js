@@ -4,7 +4,8 @@ const { DataTypes, Model } = require('sequelize');
 class Menu extends Model {}
 
 Menu.init({
-  title: DataTypes.STRING,
+  category: DataTypes.STRING,
+  menuType: DataTypes.STRING
 }, {
   sequelize,
   timestamps: false
