@@ -41,12 +41,20 @@ app.get('/menus', async (req,res) => {
     res.json(allMenus)
 })
 
+// //GET method on /items route returns all items
+// app.get('/items', async (req,res) => {
+//     //find all instances of the Model Item
+//     const allItems = await Item.findAll()
+//     //respond with allItems as a json object
+//     res.json(allItems)
+// })
+
 //GET method on /items route returns all items
-app.get('/items', async (req,res) => {
+app.get('/items/:id', async (req,res) => {
     //find all instances of the Model Item
-    const allItems = await Item.findAll()
+    const thisItems = await Item.findByPk(req.params.id)
     //respond with allItems as a json object
-    res.json(allItems)
+    res.json(thisItems)
 })
 
 //GET method on /items route returns all customers

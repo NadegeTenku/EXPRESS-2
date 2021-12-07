@@ -10,19 +10,16 @@ const {Orders} = require('./models/Orders')
 //Q: What do you think will happen when we 'seed' this file?
 const seedRestaurant = [
   {
-    restaurantId : 1,
     name: 'Dennys',
     location: 'Mansfield',
     capacity: 50
   },
   {
-    restaurantId : 2,
     name: 'Fire Tacos',
     location: 'Grand Prairie',
     capacity: 70
   },
   {
-    restaurantId : 3,
     name: 'Jakes',
     location: 'Arlington',
     capacity: 60
